@@ -1,0 +1,279 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #7B1FA2, #512DA8);
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #512DA8;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+}
+
+header .logo img {
+    height: 60px;
+    margin-right: 15px;
+}
+
+header h1 {
+    color: #FFF;
+    margin: 0;
+}
+
+nav a {
+    color: #FFF;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+main {
+    padding: 20px;
+    background: #FFF;
+    border-radius: 10px;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+h1 {
+    color: #512DA8;
+}
+
+/* About Us Section */
+.team {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.team-member {
+    background: #F3F3F3;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 10px;
+    text-align: center;
+    flex: 1;
+    max-width: 200px;
+}
+
+.team-member img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Credits Section */
+.credit-info {
+    background: #F3F3F3;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+}
+
+#total-credits, #teaching-credits, #learning-credits {
+    font-weight: bold;
+    color: #7B1FA2;
+}
+
+/* Logo Section */
+#logo img {
+    width: 150px;
+    height: auto;
+}
+
+/* Footer */
+footer {
+    background-color: #512DA8;
+    color: #FFF;
+    padding: 20px;
+    text-align: center;
+}
+footer {
+    background: #1f1f1f; /* Dark Gray */
+    color: #f7a1a1;
+    padding: 40px 0;
+    text-align: center;
+}
+
+footer p {
+    
+    margin: 0;
+    font-size: 1.2em;
+    opacity: 0.9;
+}
+
+footer .fab {
+    margin: 0 10px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5em;
+    transition: color 0.3s;
+}
+.footer-nav a {
+    color: #FFF;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.footer-nav a:hover {
+    text-decoration: underline;
+}
+
+.social-media a {
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.social-media img {
+    width: 24px;
+    height: 24px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+    }
+
+    nav a {
+        margin: 5px 0;
+    }
+    
+    .team {
+        flex-direction: column;
+    }
+    
+    .team-member {
+        max-width: 100%;
+    }
+}
+/* Classroom Styles */
+.classroom-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.video-chat {
+    flex: 2;
+    background: #F3F3F3;
+    border-radius: 8px;
+    padding: 15px;
+}
+
+#video-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+video {
+    width: 100%;
+    border-radius: 8px;
+    background: #000;
+}
+
+.chat {
+    flex: 1;
+    background: #FFF;
+    border-radius: 8px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.messages {
+    height: 300px;
+    overflow-y: auto;
+    border: 1px solid #DDD;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+#chat-input {
+    width: calc(100% - 80px);
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #DDD;
+}
+
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #512DA8;
+    color: #FFF;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #7B1FA2;
+}
+/* Social Media Links Styles */
+.container {
+    text-align: center;
+    padding: 20px;
+}
+
+.container p {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.container a {
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.container img {
+    width: 40px; /* Adjust size as needed */
+    height: 40px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.container img:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #512DA8;
+    color: #FFF;
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+}
+
+/* Ensure the main content does not overlap with the footer */
+main {
+    padding-bottom: 80px; /* Height of the footer + some margin */
+}

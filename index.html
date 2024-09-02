@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GyaanSaras</title>
+    <link rel="stylesheet" href="styles2.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png.jpg" alt="GyaanSaras Logo">
+            <h1>GyaanSaras</h1>
+        </div>
+        <nav>
+            <a href="#" onclick="showTab('home')">Home</a>
+            <a href="#" onclick="showTab('about')">About Us</a>
+            <a href="#" onclick="showTab('classroom')">Classroom</a>
+            <a href="#" onclick="showTab('test-series')">Test Series</a>
+            <a href="#" onclick="showTab('career-planning')">Career Planning</a>
+            <a href="#" onclick="showTab('credits')">Credits</a>
+            <a href="#" onclick="logout()">Logout</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="tab-content active">
+            <h1>Welcome to GyaanSaras</h1>
+            <p>Start your educational journey with us. Whether you're here to learn or teach, GyaanSaras provides the platform to grow your knowledge and earn credits.</p>
+            <div class="options">
+                <button onclick="startLearning()">Start Learning</button>
+                <button onclick="startTeaching()">Start Teaching</button>
+            </div>
+        </section>
+
+        <!-- Classroom Section -->
+        <!-- Classroom Section -->
+<section id="classroom" class="tab-content">
+    <h1>Interactive Classroom</h1>
+    <div class="classroom-container">
+        <div class="video-chat">
+            <h2>Video Chat</h2>
+            <div id="video-container">
+                <video id="local-video" autoplay muted></video>
+                <video id="remote-video" autoplay></video>
+            </div>
+            <button onclick="toggleVideo()">Toggle Video</button>
+        </div>
+        <div class="chat">
+            <h2>Chat</h2>
+            <div id="chat-messages" class="messages">
+                <!-- Messages will be appended here -->
+            </div>
+            <input type="text" id="chat-input" placeholder="Type a message..." />
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+</section>
+
+
+        <!-- About Us Section -->
+        <section id="about" class="tab-content">
+            <h1>About Us</h1>
+            <p>GyaanSaras is an innovative platform designed to facilitate collaborative learning. Our mission is to empower students and teachers to share knowledge in an interactive and rewarding environment.</p>
+            <div class="team">
+                <h2>Meet Our Team</h2>
+                <div class="team-member">
+                    <img src="kajal.jpg" alt="Team Member 1">
+                    <h3>Kajal Kumari</h3>
+                    <p>Co-founder & CEO. Passionate about education and technology.</p>
+                </div>
+                <div class="team-member">
+                    <img src="rishav.jpg" alt="Team Member 2">
+                    <h3>Rishav</h3>
+                    <p>CTO. Expert in software development and system architecture.</p>
+                </div>
+                <div class="team-member">
+                    <img src="rishav.jpg" alt="Team Member 2">
+                    <h3>Kundan Kumar</h3>
+                    <p>CTO. Expert in software development and system architecture.</p>
+                </div>
+                <!-- Add more team members as needed -->
+            </div>
+        </section>
+
+        <!-- Test Series Section -->
+        <section id="test-series" class="tab-content">
+            <h1>Test Series</h1>
+            <p>Prepare for exams with our comprehensive test series. Practice with mock tests designed by experts and track your progress to ensure you're ready for the real challenge.</p>
+            <div class="test-series">
+                <h2>Available Test Series</h2>
+                <div class="test-series-item">
+                    <h3>Physics</h3>
+                    <p>Get access to a range of physics test series that cover all the essential topics. Improve your understanding with practice questions and detailed explanations.</p>
+                    <button onclick="viewTestSeries('physics')">View Physics Test Series</button>
+                </div>
+                <div class="test-series-item">
+                    <h3>Chemistry</h3>
+                    <p>Enhance your chemistry skills with our curated test series. Engage with challenging questions and refine your concepts.</p>
+                    <button onclick="viewTestSeries('chemistry')">View Chemistry Test Series</button>
+                </div>
+                <div class="test-series-item">
+                    <h3>Mathematics</h3>
+                    <p>Prepare for your exams with our mathematics test series. Practice with a variety of questions designed to test and improve your skills.</p>
+                    <button onclick="viewTestSeries('mathematics')">View Mathematics Test Series</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Career Planning Section -->
+        <section id="career-planning" class="tab-content">
+            <h1>Career Planning</h1>
+            <p>Plan your future with GyaanSaras. We offer guidance on the best career paths, skills development, and more to set you on the path to success.</p>
+            <div class="career-planning">
+                <h2>Find Your Ideal Career Path</h2>
+                <form id="career-form">
+                    <label for="interests">Select Your Interests:</label>
+                    <select id="interests" name="interests">
+                        <option value="science">Science</option>
+                        <option value="arts">Arts</option>
+                        <option value="commerce">Commerce</option>
+                        <option value="engineering">Engineering</option>
+                        <option value="medicine">Medicine</option>
+                        <!-- Add more options as needed -->
+                    </select>
+
+                    <label for="skills">Select Your Skills:</label>
+                    <select id="skills" name="skills">
+                        <option value="analytical">Analytical</option>
+                        <option value="creative">Creative</option>
+                        <option value="technical">Technical</option>
+                        <option value="managerial">Managerial</option>
+                        <!-- Add more options as needed -->
+                    </select>
+
+                    <button type="button" onclick="generateCareerSuggestions()">Get Career Suggestions</button>
+                </form>
+                <div id="career-suggestions">
+                    <!-- Career suggestions will be displayed here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Credits Section -->
+        <section id="credits" class="tab-content">
+            <h1>Your Credit Balance</h1>
+            <div class="credit-info">
+                <p>Total Credits: <span id="total-credits">0</span></p>
+                <p>Teaching Credits: <span id="teaching-credits">0</span></p>
+                <p>Learning Credits: <span id="learning-credits">0</span></p>
+                <p>View your activity history to track how you earned your credits.</p>
+                <button onclick="viewActivityHistory()">View Activity History</button>
+                <div id="activity-history">
+                    <!-- Activity history will be displayed here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Logo Section -->
+       
+    </main>
+
+    <footer>
+        <nav class="footer-nav">
+            <a href="#" onclick="showTab('home')">Home</a>
+            <a href="#" onclick="showTab('about')">About Us</a>
+            <a href="#" onclick="showTab('classroom')">Classroom</a>
+            <a href="#" onclick="showTab('test-series')">Test Series</a>
+            <a href="#" onclick="showTab('career-planning')">Career Planning</a>
+            <a href="#" onclick="showTab('credits')">Credits</a>
+            <a href="#" onclick="logout()">Logout</a>
+        </nav>
+        <div class="container">
+            <p>Connect with us on:</p>
+           
+            <a href="https://www.linkedin.com/in/kajal-kumari-98a50a275/" target="_blank"><img src="linkedln.jpg" alt="LinkedIn"></a>
+            <a href="https://www.instagram.com/kajal21_choudhary/?next=%2F" target="_blank"><img src="insta.jpg" alt="Instagram"></a>
+            <a href="https://github.com/kajal-kumari21" target="_blank"><img src="git.jpg" alt="Github"></a>
+        </div>
+       
+        <p>&copy; 2024 GyaanSaras. All Rights Reserved.</p>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="scripts.js"></script>
+    <script src="scripts.js"></script>
+</body>
+
+</html>
